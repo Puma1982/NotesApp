@@ -17,15 +17,8 @@ app.use(expressLayouts);
 app.set("layout", "./layouts/main");
 app.set("view engine", "ejs");
 
-app.get("/", function (req, res) {
-  // this is for browser tab naming and description
-  const locals = {
-    title: "Note Calandar App",
-    description: "Ejs App",
-  };
-
-  res.render("index", locals);
-});
+// App Router
+app.use("/", require("./server/routes/index"));
 
 app.listen(port, () => {
   console.log(`Listning to port ${port}`);
