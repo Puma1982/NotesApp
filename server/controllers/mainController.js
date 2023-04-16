@@ -9,7 +9,10 @@ exports.homepage = async (req, res) => {
     description: "Auth.2 Calandar Note App",
   };
 
-  res.render("index", locals);
+  res.render("index", {
+    locals,
+    layout: "../views/layouts/front-page",
+  });
 };
 /*
  * GET /

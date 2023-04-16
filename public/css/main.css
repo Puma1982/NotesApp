@@ -73,3 +73,26 @@ h6 {
   --bs-pagination-active-bg: var(--bs-primary-rbg);
   --bs-pagination-active-border-color: var(--bs-primary-rbg);
 }
+
+/* Home Page */
+@media (min-width: 1200) {
+  .home {
+    background: url("../img/human-1.svg") left bottom no-repeat,
+      url("../img/human-2.svg") right bottom no-repeat,
+      url("../img/noise-bg.svg") left top repeat, var(--background-color);
+  }
+}
+
+.home-title::before {
+  content: url("");
+  position: absolute;
+  left: -50px;
+  top: -30px;
+}
+
+.home-title::after {
+  content: url("");
+  position: absolute;
+  right: -50px;
+  bottom: -30px;
+}
