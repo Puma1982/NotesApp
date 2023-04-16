@@ -18,7 +18,10 @@ app.set("layout", "./layouts/main");
 app.set("view engine", "ejs");
 
 // App Router
+/* index */
 app.use("/", require("./server/routes/index"));
+/* dashBoard    */
+app.use("/", require("./server/routes/dashboard"));
 
 /* Handle the 404 page(this need's to be the last Route) */
 app.get("*", function (req, res) {
