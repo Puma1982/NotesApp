@@ -20,6 +20,11 @@ app.set("view engine", "ejs");
 // App Router
 app.use("/", require("./server/routes/index"));
 
+/* Handle the 404 page(this need's to be the last Route) */
+app.get("*", function (req, res) {
+  res.status(404).render("404");
+});
+
 app.listen(port, () => {
   console.log(`Listning to port ${port}`);
 });
