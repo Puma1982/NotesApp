@@ -67,7 +67,7 @@ h6 {
   --bs-btn-disabled-border-color: var(--bs-primary-rgb);
   --bs-gradient: none;
 }
-
+/* Where a user can use links such as "next", "previous" */
 .pagination {
   --bs-pagination-color: var(--bs-primary-rgb);
   --bs-pagination-active-bg: var(--bs-primary-rbg);
