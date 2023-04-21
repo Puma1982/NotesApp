@@ -1,1 +1,53 @@
-<h1>Dashboard</h1>
+<div class="container-fluid container-fluid-custom pb-5 mb-5">
+  <div class="row mb-4">
+    <div class="col">
+      <h1>
+        <%= userName %> <br />
+        add your notes.
+      </h1>
+    </div>
+    <div class="col text-end">
+      <a href="/dashboard/add" class="btn btn-primary"> Add A Note</a>
+    </div>
+  </div>
+  <div class="row">
+    <% if (notes.length > 0) { for(var i = 0; i < notes.length; i++){ %>
+    <div class="col-md-4 col-sm-6 content-card">
+      <div class="card-big-shadow">
+        <div
+          class="card card-just-text"
+          data-background="color"
+          data-color="orange"
+          data-radius="none"
+        >
+          <div class="content">
+            <a
+              href="/dashboard/item/<%= notes[i]._id %>"
+              class="card-body text-decoration-none"
+            >
+              <h5 class="card-title"><%= notes[i].title %></h5>
+              <p class="card-text"><%= notes[i].body %></p>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <% }} else { %>
+    <div class="row">
+      <div class="col-3">
+        <img
+          src="/public/img/human-3.svg"
+          alt="human pointing hand troward a create button"
+        />
+      </div>
+      <div class="col mt-md-4">
+        <h2>Okay...</h2>
+        <h4>
+          let's start with your first note!<br /><br />
+          <a href="/dashboard/add">Click here!</a>
+        </h4>
+      </div>
+    </div>
+    <% } %>
+  </div>
+</div>
