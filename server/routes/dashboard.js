@@ -36,4 +36,19 @@ router.delete(
   dashboardController.dashboardDeleteNote
 );
 
+/**
+ * Dasboard Routes and type of request, "GET"
+ * this takes the user to State of creatin a note
+ */
+router.get("/dashboard/add", isLoggedIn, dashboardController.dasbboardAddNote);
 module.exports = router;
+
+/**
+ * Dashboard Routes and type of request, "POST"
+ * here is where the Note is getting stored in the DB
+ */
+router.post(
+  "/dashboard/add",
+  isLoggedIn,
+  dashboardController.dashboardAddNoteSubmit
+);
