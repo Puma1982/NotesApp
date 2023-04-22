@@ -3,6 +3,9 @@ require("dotenv").config();
 const express = require("express");
 const expressLayouts = require("express-ejs-layouts");
 
+/* Override method for update Notes */
+const methodOverride = require("method-override");
+
 /* import DB file */
 const connectDB = require("./server/config/db");
 
@@ -28,6 +31,9 @@ app.use(
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+
+/* using the PUT & PAT method, override */
+app.use(methodOverride("_method"));
 
 /* start to connect the DB */
 connectDB();
