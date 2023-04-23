@@ -52,3 +52,24 @@ router.post(
   isLoggedIn,
   dashboardController.dashboardAddNoteSubmit
 );
+
+/**
+ * Dashboard Routes and type of request, "GET"
+ * Searching functionality
+ */
+router.get(
+  "/dashboard/search",
+  isLoggedIn,
+  dashboardController.dashboardSearch
+);
+/**
+ * Dashboard Routes and type of request, "POST"
+ * Updating the funded note
+ */
+router.post(
+  "/dashboard/search",
+  isLoggedIn,
+  dashboardController.dashboardSearchSubmit
+);
+
+module.exports = router;
